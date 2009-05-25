@@ -307,6 +307,14 @@
 // -------------------------------------------------------------------------------
 // Opens the development blog URL in the default browser
 // -------------------------------------------------------------------------------
+- (IBAction)showGithubRepository:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/jmstacey/Animated-Mandelbrot"]];
+}
+
+// -------------------------------------------------------------------------------
+// Opens the development blog URL in the default browser
+// -------------------------------------------------------------------------------
 - (IBAction)showDevBlog:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://jonsview.com"]];

@@ -43,6 +43,7 @@
 - (IBAction)showAboutWindow:(id)sender;
 - (IBAction)closeAboutWindow:(id)sender;
 
+- (IBAction)showGithubRepository:(id)sender;
 - (IBAction)showDevBlog:(id)sender;
 - (IBAction)showWikiPage:(id)sender;
 

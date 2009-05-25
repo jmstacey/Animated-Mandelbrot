@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,6 +279,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>7</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -317,12 +317,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>JSIndeterminateProgressIndicatorCell.m</string>
+								<string>FractalMovie.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,30 +332,30 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>JSIndeterminateProgressIndicatorCell.m</string>
+										<string>FractalMovie.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FC5534B60FCB3F5200257B4F</string>
+										<string>FC880CA60FCB482B00A7BFC1</string>
 										<key>history</key>
 										<array>
 											<string>FC30CFF70F43BD12003F779E</string>
 											<string>FC9BC7240F6F6772005EFECE</string>
 											<string>FCEE559A0F71B17300C65A94</string>
-											<string>FCA0DCE30F72B1D200A9C226</string>
-											<string>FCA0DD320F72C3C700A9C226</string>
-											<string>FCA0DD340F72C3C700A9C226</string>
-											<string>FCA0DD890F72C65B00A9C226</string>
-											<string>FCA0DD8D0F72C65B00A9C226</string>
-											<string>FCA0DE0A0F7322E600A9C226</string>
 											<string>FCA0DE7C0F73354900A9C226</string>
-											<string>FCA0DE7E0F73354900A9C226</string>
-											<string>FCA0DE7F0F73354900A9C226</string>
-											<string>FCA0DEC20F733CB400A9C226</string>
-											<string>FC4B0B8A0F817112006C0D1F</string>
-											<string>FC4B0B910F8171F8006C0D1F</string>
-											<string>FC4B0B960F817242006C0D1F</string>
-											<string>FC4B0B990F817242006C0D1F</string>
+											<string>FCF36E710FCB40E800855F31</string>
+											<string>FCF36E8A0FCB416F00855F31</string>
+											<string>FCF36E900FCB416F00855F31</string>
+											<string>FCF36EB40FCB447400855F31</string>
+											<string>FC880C700FCB474900A7BFC1</string>
+											<string>FC880C710FCB474900A7BFC1</string>
+											<string>FC880C740FCB474900A7BFC1</string>
+											<string>FC880C750FCB474900A7BFC1</string>
+											<string>FC880C760FCB474900A7BFC1</string>
+											<string>FC880C9D0FCB47F100A7BFC1</string>
+											<string>FC880C9E0FCB47F100A7BFC1</string>
+											<string>FC880C9F0FCB47F100A7BFC1</string>
+											<string>FC880C720FCB474900A7BFC1</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -374,6 +376,24 @@
 											<string>FC0F31E60F705F8900EC65BB</string>
 											<string>FC1085230F718B3400FBC131</string>
 											<string>FC1085270F718B3400FBC131</string>
+											<string>FC880C790FCB474900A7BFC1</string>
+											<string>FC880C7A0FCB474900A7BFC1</string>
+											<string>FC880C7B0FCB474900A7BFC1</string>
+											<string>FC880C7C0FCB474900A7BFC1</string>
+											<string>FC880C7D0FCB474900A7BFC1</string>
+											<string>FC880C7E0FCB474900A7BFC1</string>
+											<string>FC880C7F0FCB474900A7BFC1</string>
+											<string>FC880C800FCB474900A7BFC1</string>
+											<string>FC880C810FCB474900A7BFC1</string>
+											<string>FC880C820FCB474900A7BFC1</string>
+											<string>FC880C830FCB474900A7BFC1</string>
+											<string>FC880C840FCB474900A7BFC1</string>
+											<string>FC880C850FCB474900A7BFC1</string>
+											<string>FC880C860FCB474900A7BFC1</string>
+											<string>FC880C870FCB474900A7BFC1</string>
+											<string>FC880CA00FCB47F100A7BFC1</string>
+											<string>FC880CA10FCB47F100A7BFC1</string>
+											<string>FC880CA20FCB47F100A7BFC1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -431,9 +451,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FC5534AC0FCB3F0300257B4F</string>
+				<string>FC880C6C0FCB45F000A7BFC1</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FC5534AD0FCB3F0300257B4F</string>
+				<string>FC880C6D0FCB45F000A7BFC1</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -569,8 +589,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FC4C53970F413F2800CD3CFA</string>
-		<string>/Users/jon/Documents/Personal/Projects/Animated Mandelbrot/Animated Mandelbrot.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/jon/Documents/Personal/Projects/Animated Mandelbrot/Animated Mandelbrot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>88 55 1833 1123 0 0 1920 1178 </string>
@@ -594,7 +614,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>FractalMovie.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -611,6 +631,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -650,7 +672,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FC4C53970F413F2800CD3CFA</string>
-				<string>FC5534AE0FCB3F0300257B4F</string>
+				<string>FC880C890FCB474900A7BFC1</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -770,13 +792,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FC5534AF0FCB3F0300257B4F</string>
+				<string>FC880C8A0FCB474900A7BFC1</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FC5534B00FCB3F0300257B4F</string>
-				<string>FC5534B10FCB3F0300257B4F</string>
-				<string>FC5534B20FCB3F0300257B4F</string>
-				<string>FC5534B30FCB3F0300257B4F</string>
-				<string>FC5534B40FCB3F0300257B4F</string>
+				<string>FC880C8B0FCB474900A7BFC1</string>
+				<string>FC880C8C0FCB474900A7BFC1</string>
+				<string>FC880C8D0FCB474900A7BFC1</string>
+				<string>FC880C8E0FCB474900A7BFC1</string>
+				<string>FC880C8F0FCB474900A7BFC1</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -940,7 +962,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FC5534B50FCB3F0300257B4F</string>
+				<string>FC880C900FCB474900A7BFC1</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

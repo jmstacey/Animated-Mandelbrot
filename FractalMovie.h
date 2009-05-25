@@ -49,8 +49,4 @@
 
 - (void)createMovieBGThread;
 
-- (double)quadraticX:(double)x;
-
-- (double)blasted:(double)value;
-
 @end
