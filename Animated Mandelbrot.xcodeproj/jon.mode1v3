@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,8 +281,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>1</integer>
+									<integer>19</integer>
+									<integer>15</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -306,7 +308,7 @@
 							<real>215</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>88 55 1833 1123 0 0 1920 1178 </string>
+						<string>432 55 1833 1123 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -317,8 +319,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FC880CA60FCB482B00A7BFC1</string>
+										<string>FCD3C8700FCB4CAB0088B898</string>
 										<key>history</key>
 										<array>
 											<string>FC30CFF70F43BD12003F779E</string>
@@ -355,7 +355,7 @@
 											<string>FC880C9D0FCB47F100A7BFC1</string>
 											<string>FC880C9E0FCB47F100A7BFC1</string>
 											<string>FC880C9F0FCB47F100A7BFC1</string>
-											<string>FC880C720FCB474900A7BFC1</string>
+											<string>FC880CA60FCB482B00A7BFC1</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -376,24 +376,6 @@
 											<string>FC0F31E60F705F8900EC65BB</string>
 											<string>FC1085230F718B3400FBC131</string>
 											<string>FC1085270F718B3400FBC131</string>
-											<string>FC880C790FCB474900A7BFC1</string>
-											<string>FC880C7A0FCB474900A7BFC1</string>
-											<string>FC880C7B0FCB474900A7BFC1</string>
-											<string>FC880C7C0FCB474900A7BFC1</string>
-											<string>FC880C7D0FCB474900A7BFC1</string>
-											<string>FC880C7E0FCB474900A7BFC1</string>
-											<string>FC880C7F0FCB474900A7BFC1</string>
-											<string>FC880C800FCB474900A7BFC1</string>
-											<string>FC880C810FCB474900A7BFC1</string>
-											<string>FC880C820FCB474900A7BFC1</string>
-											<string>FC880C830FCB474900A7BFC1</string>
-											<string>FC880C840FCB474900A7BFC1</string>
-											<string>FC880C850FCB474900A7BFC1</string>
-											<string>FC880C860FCB474900A7BFC1</string>
-											<string>FC880C870FCB474900A7BFC1</string>
-											<string>FC880CA00FCB47F100A7BFC1</string>
-											<string>FC880CA10FCB47F100A7BFC1</string>
-											<string>FC880CA20FCB47F100A7BFC1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -407,7 +389,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1574, 1015}}</string>
 								<key>RubberWindowFrame</key>
-								<string>88 55 1833 1123 0 0 1920 1178 </string>
+								<string>432 55 1833 1123 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -427,7 +409,7 @@
 								<key>Frame</key>
 								<string>{{0, 1020}, {1574, 62}}</string>
 								<key>RubberWindowFrame</key>
-								<string>88 55 1833 1123 0 0 1920 1178 </string>
+								<string>432 55 1833 1123 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -451,9 +433,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FC880C6C0FCB45F000A7BFC1</string>
+				<string>FCD3C86C0FCB4C050088B898</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FC880C6D0FCB45F000A7BFC1</string>
+				<string>FCD3C86D0FCB4C050088B898</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -586,14 +568,9 @@
 	<key>WindowJustification</key>
 	<integer>5</integer>
 	<key>WindowOrderList</key>
-	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FC4C53970F413F2800CD3CFA</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/jon/Documents/Personal/Projects/Animated Mandelbrot/Animated Mandelbrot.xcodeproj</string>
-	</array>
+	<array/>
 	<key>WindowString</key>
-	<string>88 55 1833 1123 0 0 1920 1178 </string>
+	<string>432 55 1833 1123 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
