@@ -24,7 +24,7 @@ Simply grab one of the pre-made downloads, mount the image, and copy Animated Ma
 Todo
 ------------
 
-Animated Mandelbrot is a fully polished software application yet. There are a few bugs and other issues that need to be tackled. Head to the Issue Queue if you're interested in tackling a problem or two to make this application even better.
+Animated Mandelbrot is not a fully polished software application yet. There are a few bugs and other issues that need to be tackled. Head to the Issue Queue if you're interested in tackling a problem or two to make this application even better.
 
 Copyright
 ------------
