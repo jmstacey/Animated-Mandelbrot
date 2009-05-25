@@ -1,0 +1,157 @@
+8
+
+dir
+10
+file:///Users/jon/Documents/Personal/Repositories/Xcode/Animated%20Mandelbrot
+file:///Users/jon/Documents/Personal/Repositories/Xcode
+
+
+
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+66155fd9-35d7-4a58-a425-3d0668527d7d
+
+build
+dir
+
+AppController.m
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+1da96f740ac798d12550af2c6dcbd6d2
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+QTMovieExtensions.m
+file
+
+
+
+delete
+2009-02-14T03:38:00.000000Z
+9b24265b4308d7d39f426e22f857d39d
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+main.m
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+ebf689ae1f05c8e3d9eafb0e3e332822
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+Animated Mandelbrot_Prefix.pch
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+1de89f5e698d4c03616f1c8b129b1c84
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+FractalView.m
+file
+11
+
+
+
+2009-02-15T08:05:13.000000Z
+dbe5a47c53bd5a243b9077bd158aced9
+2009-02-15T08:05:28.503496Z
+11
+jon
+
+Mandelbrot.m
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+07906fc1be127a6b2ca4b61cab3f79f3
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+Info.plist
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+b6afde9abcf8b84bdeea9bc79e596f23
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+Animated Mandelbrot.xcodeproj
+dir
+
+QTMovieExtensions.h
+file
+
+
+
+delete
+2009-02-14T03:38:00.000000Z
+bab2fcb4db5b82415b74f504436e462a
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+FractalView.h
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+5b085ae930abe20a085b5ef25c514140
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+Mandelbrot.h
+file
+
+
+
+
+2009-02-14T03:38:00.000000Z
+11cd6d1dd52adc14e39928ac404f73d5
+2009-02-14T03:37:30.879145Z
+10
+jon
+
+English.lproj
+dir
+

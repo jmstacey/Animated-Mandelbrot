@@ -1,0 +1,45 @@
+//
+//  FractalView.h
+//  Animated Mandelbrot
+//
+//  Created by Jon Stacey on 2/7/09.
+//  Copyright 2009 Jon's View. All rights reserved.
+//
+
+
+#import <Cocoa/Cocoa.h>
+#import <QTKit/QTKit.h>
+#import <QuickTime/QuickTime.h>
+@class Mandelbrot;
+@class QTMovieExtensions;
+
+
+@interface FractalView : NSView {
+	NSBitmapImageRep	*curView;
+	NSLock				*workLock;
+	
+	double  viewX,
+	viewY,
+	viewStep,
+	movStartX,
+	movStartY,
+	movStartStep;
+	
+	IBOutlet NSTextField *startCoordsTextField;
+	IBOutlet NSTextField *endCoordsTextField;
+	IBOutlet NSTextField *actionMessageTextField;
+	IBOutlet NSTextField *frameCountTextField;
+	IBOutlet NSProgressIndicator *progressBar;
+	IBOutlet NSWindow *calculatingWindow;
+	
+	IBOutlet NSButton *setCurCoordsButton;
+	
+	IBOutlet id objectController;
+}
+
+- (IBAction)redraw:(id)sender;
+- (IBAction)setStartingCoords:(id)sender;
+- (IBAction)createMovie:(id)sender;
+- (IBAction)reset:(id)sender;
+
+@end

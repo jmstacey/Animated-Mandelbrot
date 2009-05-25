@@ -1,0 +1,169 @@
+//
+//  FractalView.m
+//  Animated Mandelbrot
+//
+//  Created by Jon Stacey on 2/7/09.
+//  Copyright 2009 Jon's View. All rights reserved.
+//
+
+#import "FractalView.h"
+#import "Mandelbrot.h"
+#import "FractalMovie.h"
+
+
+@implementation FractalView
+
+- (id)initWithFrame:(NSRect)frame { // Remember, this is run and then serialized in the nib. Use awakwFromNib for runtime uses.
+    self = [super initWithFrame:frame];
+    if (self) {		
+		viewStep =  4.0 / frame.size.width;
+		
+		viewX	 = -2.5;
+		viewY	 = frame.size.height * viewStep * 0.5;
+	}
+    return self;
+}
+
+- (void)awakeFromNib
+{
+	// Set default values
+	[objectController setValue:[NSNumber numberWithInt:256] forKeyPath:@"selection.maxDwell"];
+	[objectController setValue:[NSNumber numberWithInt:4]	forKeyPath:@"selection.escapeRadius"];
+	
+	[self setStartingCoords:self];  // Set default starting coordinates for movie
+	
+	[actionMessageTextField setStringValue:@""];
+	[frameCountTextField setStringValue:@""];
+}
+
+/* TODO: Look at queue based approach with NSOperation or at least a better way to be notified when the operations are complete
+ * I need a way to thread the frame creation here to avoid the spining pin wheel.
+ */
+
+- (void)drawRect:(NSRect)frame {
+	
+	// Don't do anything if the window is being resized
+	if ([self inLiveResize])
+		return;
+	
+	[endCoordsTextField setStringValue:[NSString stringWithFormat:@"(%f, %f)", viewX, viewY]];	// Update ending coordinates display with current position
+	
+	Mandelbrot *fractalFrame = [[Mandelbrot alloc] initWithFrameHeight:frame.size.height frameWidth:frame.size.width viewX:viewX viewY:viewY viewStep:viewStep objectController:objectController];
+	
+	curView = [fractalFrame createFrame];
+	
+	[curView drawInRect:frame];
+
+}
+	
+- (void)mouseDown:(NSEvent *)theEvent
+{	
+	NSPoint mouseDownPoint;
+	double	newX,
+	newY;
+	
+	mouseDownPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+	
+	newX = viewX + ( viewStep * mouseDownPoint.x );
+	newY = viewY - ( viewStep * ([self bounds].size.height - mouseDownPoint.y ));
+	
+	viewX = newX - ( viewStep * [self bounds].size.width * 0.25 );
+	viewY = newY + ( viewStep * [self bounds].size.height * 0.25 );
+	viewStep = viewStep * 0.5 ;
+	
+	[self setNeedsDisplay:YES];
+	
+}
+
+- (void)rightMouseDown:(NSEvent *)theEvent
+{	
+	NSPoint mouseDownPoint;
+	double	newX,
+	newY;
+	
+	mouseDownPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+	
+	newX = viewX - ( viewStep * mouseDownPoint.x );
+	newY = viewY + ( viewStep * ([self bounds].size.height - mouseDownPoint.y ));
+	
+	viewX = newX + ( viewStep * [self bounds].size.width * 0.25 );
+	viewY = newY - ( viewStep * [self bounds].size.height * 0.25 );
+	viewStep = viewStep * 1.5 ;
+	
+	[self setNeedsDisplay:YES];
+	
+}
+
+- (void)viewDidEndLiveResize
+{	
+	[self drawRect:[self frame]];
+}
+
+- (BOOL)acceptsFirstMouse:(NSEvent *)theEvent
+{
+	return YES;
+}
+
+- (IBAction)redraw:(id)sender
+{
+	[self setNeedsDisplay:YES];
+}
+
+- (IBAction)setStartingCoords:(id)sender
+{
+	movStartX		= viewX;
+	movStartY		= viewY;
+	movStartStep	= viewStep;
+	
+	// Update starting coordinates display
+	[startCoordsTextField setStringValue:[NSString stringWithFormat:@"(%f, %f)", movStartX, movStartY]];
+}
+
+- (IBAction)createMovie:(id)sender
+{	
+	FractalMovie *fractalMovie;
+	
+	int		frameRate	= 24;
+	int		duration	= 10;
+	
+	
+	/* TODO:
+	 * QTMovie must be initialized in the main thread, therefore ask the user where to save it here.
+	 */	
+	
+	// QTMovie must be initilized on the main thread.
+	QTMovie *movie	= [[QTMovie alloc] initToWritableFile:@"/Users/jon/Desktop/fractalMovie" error:NULL];
+	
+	fractalMovie = [FractalMovie alloc];
+	[fractalMovie initWithQTMovie:movie 
+					  movieHeight:[self frame].size.height 
+					   movieWidth:[self frame].size.width 
+					  movieStartX:movStartX 
+					  movieStartY:movStartY 
+				   movieStartStep:movStartStep 
+						movieEndX:viewX 
+						movieEndY:viewY 
+					 movieEndStep:viewStep 
+				   movieFrameRate:frameRate 
+					movieDuration:duration
+				 objectController:objectController];
+	
+	[NSThread detachNewThreadSelector:@selector(createMovieBGThread) toTarget:fractalMovie withObject:nil];
+}
+
+- (IBAction)reset:(id)sender
+{
+	// Reset settings
+	viewStep = 4.0 / [self frame].size.width;
+	
+	viewX	 = -2.5;
+	viewY	 = [self frame].size.height * viewStep * 0.5;
+	
+	[setCurCoordsButton performClick:sender];
+	
+	// Redraw the screen
+	[self setNeedsDisplay:YES];
+}
+
+
+@end

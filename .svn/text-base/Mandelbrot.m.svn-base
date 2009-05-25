@@ -1,0 +1,152 @@
+//
+//  Mandelbrot.m
+//  Animated Mandelbrot
+//
+//  Created by Jon Stacey on 2/7/09.
+//  Copyright 2009 Jon's View. All rights reserved.
+//
+
+#import "Mandelbrot.h"
+
+
+@implementation Mandelbrot
+
++ (int) maxDwell:(int)maxDwell
+	escapeRadius:(int)escapeRadius
+			   x:(double)x
+			   y:(double)y
+{
+	register double Zr = 0,
+	Zi = 0,
+	tmp1, 
+	tmp2;
+	
+	register int	dwell;
+	
+    for (dwell = 0; dwell <= maxDwell; dwell++)
+    {
+		tmp1 = Zr * Zr;
+		tmp2 = Zi * Zi;
+		Zi	 = ( 2.0 * Zr * Zi ) + y ;
+		Zr	 = tmp1 - tmp2 + x ;
+		
+		if ((tmp1 + tmp2) > escapeRadius ) 
+			break;
+    }
+	
+    return dwell;
+}
+
+/* TODO:
+ * Implement threading here so that the performance boost of multiple cores 
+ * will benefit both movie creation and life preview
+ */
+
++ (NSBitmapImageRep *) frameHeight:(int)frameHeight
+						frameWidth:(int)frameWidth
+							 viewX:(double)viewX
+							 viewY:(double)viewY
+						  viewStep:(double)viewStep
+				  objectController:(id)objectController
+{
+	NSBitmapImageRep		*curView;
+	
+	unsigned char	*bitmapData;
+	
+	int		x,
+			y,
+			dwell,
+			bitmapIndex;
+	
+	double	ix, 
+			iy,
+			progress,
+			progressBarDelta;
+	
+	float	red,
+			green,
+			blue;
+	
+	int		maxDwell		= [[objectController valueForKeyPath:@"selection.maxDwell"] intValue],
+			escapeRadius	= [[objectController valueForKeyPath:@"selection.escapeRadius"] intValue];
+	
+	curView = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
+													  pixelsWide:frameWidth
+													  pixelsHigh:frameHeight
+												   bitsPerSample:8 
+												 samplesPerPixel:3 
+														hasAlpha:NO 
+														isPlanar:NO
+												  colorSpaceName:NSCalibratedRGBColorSpace
+													 bytesPerRow:(frameWidth*3) 
+													bitsPerPixel:0];
+	
+	bitmapData = [curView bitmapData];
+	
+	//[progressBar setDoubleValue:0.0];
+	//[calculatingWindow orderFront:self];
+	
+	progressBarDelta = 100 / frameHeight;
+	
+	for (y = 0; y < frameHeight; y++)
+	{
+		for (x = 0; x < frameWidth; x++)
+		{
+			ix = viewX + (viewStep * x);
+			iy = viewY - (viewStep * y);
+			
+			dwell = [self maxDwell: maxDwell
+					  escapeRadius: escapeRadius
+								 x: ix
+								 y: iy];
+			
+			if (dwell == maxDwell)
+			{
+				red		= 0;
+				blue	= 0;
+				green	= 0;
+			}
+			else
+			{
+                red		= ( dwell % 16) * 16;
+                green	= (( dwell / 16 ) % 16 ) * 16;
+                blue	= (( dwell / 256 ) % 16 ) * 16;
+			}
+			
+			// Bitmap index equation: 3(x+w*y) + offset
+			bitmapIndex = 3 * (x + frameWidth * y);
+			
+			bitmapData[bitmapIndex]		= red;
+			bitmapData[bitmapIndex + 1] = green;
+			bitmapData[bitmapIndex + 2] = blue;			
+			
+			// While the following is cleaner (read easier), it is quite a bit slower because of the NSColor object.
+			// Why Apple? Why can we not update these objects, instead of being required to destroy and create new ones?
+			// WHHHHHYYYYY?
+			/*
+			// Convert to percentages for NSColor (belongs in else clause above)
+			red		/= 255;
+			green	/= 255;
+			blue	/= 255;
+			
+			color = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0];
+			[curView setColor:[NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0] atX:x y:y];
+			[color finalize]
+			*/
+			
+		}
+		// !!!!!
+		// The progress bar is slowing things down, refine so it's not doing so many updates.
+		
+		// Update progress bar
+		//[progressBar incrementBy:progressBarDelta];
+		//[progressBar displayIfNeeded];
+		
+	}
+	//[progressBar setDoubleValue:100.0];
+	//[calculatingWindow orderOut:self];
+	
+	return curView;
+}
+
+@end

@@ -1,0 +1,71 @@
+//
+//  AppController.m
+//  Animated Mandelbrot
+//
+//  Created by Jon Stacey on 2/7/09.
+//  Copyright 2009 Jon's View. All rights reserved.
+//
+
+#import "AppController.h"
+
+
+@implementation AppController
+
+- (id)init
+{
+	if (self != [super init]) 
+		return nil;
+	
+	// Set maximums and minimums for default values
+	minMaxDwell		=   128;
+	maxMaxDwell		= 16384;
+	
+	minEscapeRadius =     2;
+	maxEscapeRadius =   128;
+	
+	return self;
+}
+
+- (BOOL)validateMaxDwell:(id *)ioValue
+				   error:(NSError **)outError
+{
+	int value = [*ioValue intValue];
+	
+	[self willChangeValueForKey:@"maxDwell"];
+	
+	if (value < minMaxDwell)
+		maxDwell = minMaxDwell;
+	else if (value > maxMaxDwell)
+		maxDwell = maxMaxDwell;
+	else
+		maxDwell = value;
+	[self didChangeValueForKey:@"maxDwell"];
+
+	return YES;
+}
+
+- (BOOL)validateEscapeRadius:(id *)ioValue
+					   error:(NSError **)outError
+{
+	int value = [*ioValue intValue];
+	
+	[self willChangeValueForKey:@"escapeRadius"];
+	
+	NSLog(@"Changing minEscape"); 
+	
+	if (value < minEscapeRadius)
+		escapeRadius = minEscapeRadius;
+	else if (value > maxEscapeRadius)
+		escapeRadius = maxEscapeRadius;
+	else
+		escapeRadius = escapeRadius;
+	
+	[self didChangeValueForKey:@"escapeRadius"];
+	
+	return YES;
+}
+
+@synthesize maxDwell;
+@synthesize escapeRadius;
+
+@end

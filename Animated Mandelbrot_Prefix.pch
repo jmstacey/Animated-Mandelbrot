@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'Animated Mandelbrot' target in the 'Animated Mandelbrot' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#ifdef _DEBUG
+	#define debug_NSLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+	#define debug_NSLog(format, ...)
+#endif
